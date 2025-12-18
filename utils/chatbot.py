@@ -22,7 +22,7 @@ class CrimeAnalysisBot:
     """Chatbot pour l'analyse de données de criminalité."""
     
     def __init__(self, 
-                 default_model: str = "gpt-3.5-turbo",
+                 default_model: str = "gpt-5-nano",
                  fallback_model: str = "claude-3-haiku-20240307"):
         """
         Initialise le chatbot.
@@ -42,7 +42,7 @@ class CrimeAnalysisBot:
         # Vérifier les clés API disponibles
         openai_key = os.getenv("OPENAI_API_KEY")
         if openai_key and openai_key != "your_api_key_here":
-            models.extend(["gpt-3.5-turbo"])
+            models.extend(["gpt-5-nano", "gpt-4o", "gpt-4-turbo", "gpt-3.5-turbo"])
         
         anthropic_key = os.getenv("ANTHROPIC_API_KEY")
         if anthropic_key and anthropic_key != "your_anthropic_key_here":
